@@ -4,101 +4,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sammed Khavate | DevOps Portfolio</title>
+<title>Sammed Khavate | DevOps Learner</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#0b1220;color:#e5e7eb;line-height:1.7}
-header{padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:#111c30}
-header h2{color:#38bdf8}
-nav a{color:white;text-decoration:none;margin-left:18px}
-.hero{text-align:center;padding:90px 20px;background:linear-gradient(135deg,#102b4c,#111827)}
-.hero h1{font-size:42px;margin:8px}
-.hero h2{color:#38bdf8}
-.btn{display:inline-block;background:#0284c7;color:white;padding:11px 22px;border-radius:7px;text-decoration:none;margin:10px}
-section{padding:45px 8%;max-width:1100px;margin:auto}
-h2.section-title{color:#38bdf8}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#17243a;padding:22px;border-radius:12px;border:1px solid #263b59}
-.card h3{color:#7dd3fc}
-footer{text-align:center;padding:25px;background:#111c30}
-a{color:#7dd3fc}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080d1b;
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+header {
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #0d1425;
+  border-bottom: 1px solid #263653;
+}
+
+header h2 { color: #38bdf8; }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+}
+
+nav a:hover { color: #38bdf8; }
+
+.hero {
+  min-height: 520px;
+  padding: 100px 20px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 15% 20%, #0878a944, transparent 35%),
+    radial-gradient(circle at 85% 30%, #8738c944, transparent 35%),
+    linear-gradient(135deg, #080d1b, #17102b, #0b1c32);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(#8bdcff 1px, transparent 1px);
+  background-size: 38px 38px;
+  opacity: .18;
+  animation: drift 18s linear infinite;
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(38px); }
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 58px);
+  margin: 12px;
+}
+
+.hero h1 span { color: #38bdf8; }
+
+.hero h2 { color: #c4a5fd; }
+
+.hero p { color: #cbd5e1; }
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #0891b2, #6366f1);
+  color: white;
+  padding: 12px 23px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+section {
+  padding: 55px 8%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.section-title {
+  color: #38bdf8;
+  font-size: 27px;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(145deg, #14213a, #11172a);
+  padding: 23px;
+  border-radius: 14px;
+  border: 1px solid #33466a;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #38bdf8;
+  box-shadow: 0 0 25px #38bdf822;
+}
+
+.card h3 { color: #7dd3fc; }
+
+.tag {
+  display: inline-block;
+  background: #1e3150;
+  border: 1px solid #3c5478;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin: 3px;
+}
+
+#contact a { color: #7dd3fc; }
+
+footer {
+  text-align: center;
+  padding: 28px;
+  background: #0d1425;
+  border-top: 1px solid #263653;
+  color: #94a3b8;
+}
+
+@media(max-width:600px) {
+  header { justify-content: center; }
+  nav { text-align: center; }
+  .hero { padding: 75px 15px; }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h2>Sammed.dev</h2>
-<nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
+  <h2>Sammed.dev</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <div class="hero">
-<p>HELLO, WELCOME TO MY PORTFOLIO</p>
-<h1>I'm Sammed Khavate</h1>
-<h2>Aspiring DevOps Engineer</h2>
-<p>Learning Linux, Cloud and DevOps through practical projects.</p>
-<a class="btn" href="#projects">View My Projects</a>
-<a class="btn" href="https://github.com/sammedkhavate247-cloud" target="_blank">GitHub Profile</a>
+  <p>HELLO, WELCOME TO MY PORTFOLIO</p>
+  <h1>I'm <span>Sammed Khavate</span></h1>
+  <h2>DevOps Learner</h2>
+  <p>Building my skills in Linux, Networking, Git and Cloud through practical projects.</p>
+  <a class="btn" href="#projects">Explore Projects</a>
+  <a class="btn" href="https://github.com/sammedkhavate247-cloud" target="_blank">GitHub Profile ↗</a>
 </div>
 
 <section id="about">
-<h2 class="section-title">About Me</h2>
-<p>I am a Commerce graduate building my career in IT and DevOps. I am developing practical skills through hands-on Linux administration, web server hosting, networking and Git projects.</p>
+  <h2 class="section-title">About Me</h2>
+  <div class="card">
+    I am a Commerce graduate building my career in IT and DevOps.
+    I am developing practical skills through hands-on Linux administration,
+    web server hosting, networking and Git projects.
+  </div>
 </section>
 
 <section id="skills">
-<h2 class="section-title">Technical Skills</h2>
-<div class="grid">
-<div class="card"><h3>Linux</h3><p>Basic commands, users, groups, permissions and package management.</p></div>
-<div class="card"><h3>Networking</h3><p>IP addresses, ports, SSH and basic connectivity.</p></div>
-<div class="card"><h3>Web Server</h3><p>Nginx installation, service management and website hosting.</p></div>
-<div class="card"><h3>Git & GitHub</h3><p>Repositories, commits, push and GitHub Pages.</p></div>
-<div class="card"><h3>File Transfer</h3><p>Practical use of SSH and SCP.</p></div>
-<div class="card"><h3>Virtualization</h3><p>VirtualBox and Vagrant fundamentals.</p></div>
-</div>
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="grid">
+    <div class="card"><h3>🐧 Linux</h3><p>Commands, users, groups, permissions and packages.</p></div>
+    <div class="card"><h3>🌐 Networking</h3><p>IP addresses, ports, SSH and connectivity.</p></div>
+    <div class="card"><h3>⚙️ Web Server</h3><p>Nginx installation and website hosting.</p></div>
+    <div class="card"><h3>📦 Git & GitHub</h3><p>Repositories, commits, push and GitHub Pages.</p></div>
+    <div class="card"><h3>🔐 SSH & SCP</h3><p>Remote login and secure file transfer.</p></div>
+    <div class="card"><h3>💻 Virtualization</h3><p>VirtualBox and Vagrant fundamentals.</p></div>
+  </div>
 </section>
 
 <section id="projects">
-<h2 class="section-title">My Projects</h2>
-<div class="grid">
-<div class="card">
-<h3>Linux Web Server Hosting</h3>
-<p>Installed and configured Nginx on a CentOS virtual machine and hosted a custom HTML website.</p>
-<p><b>Tools:</b> Linux, CentOS, Nginx, VirtualBox</p>
-</div>
-<div class="card">
-<h3>SSH & SCP Practice</h3>
-<p>Practised remote Linux login and secure file transfer between a Windows machine and Linux VM.</p>
-<p><b>Tools:</b> SSH, SCP, Git Bash</p>
-</div>
-<div class="card">
-<h3>GitHub Pages Portfolio</h3>
-<p>Published a personal portfolio website using a GitHub repository and GitHub Pages.</p>
-<p><b>Tools:</b> HTML, Git, GitHub</p>
-</div>
-</div>
+  <h2 class="section-title">My Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Linux Web Server Hosting</h3>
+      <p>Hosted a custom HTML website using Nginx on a CentOS virtual machine.</p>
+      <span class="tag">Linux</span><span class="tag">CentOS</span><span class="tag">Nginx</span>
+    </div>
+    <div class="card">
+      <h3>SSH & SCP Practice</h3>
+      <p>Practised remote Linux login and secure file transfer between Windows and Linux VM.</p>
+      <span class="tag">SSH</span><span class="tag">SCP</span><span class="tag">Git Bash</span>
+    </div>
+    <div class="card">
+      <h3>GitHub Pages Portfolio</h3>
+      <p>Published a personal portfolio using Git and GitHub Pages.</p>
+      <span class="tag">HTML</span><span class="tag">Git</span><span class="tag">GitHub</span>
+    </div>
+  </div>
 </section>
 
 <section id="learning">
-<h2 class="section-title">Currently Learning</h2>
-<div class="card">
-<p>Linux Administration | Bash Scripting | Git | Networking | AWS Fundamentals | DevOps</p>
-</div>
+  <h2 class="section-title">Currently Learning</h2>
+  <div class="card">
+    Linux Administration | Bash Scripting | Git | Networking | AWS Fundamentals | DevOps
+  </div>
 </section>
 
 <section id="contact">
-<h2 class="section-title">Contact</h2>
-<p>GitHub: <a href="https://github.com/sammedkhavate247-cloud" target="_blank">Visit My GitHub</a></p>
-<p>Email: Add your professional email here</p>
+  <h2 class="section-title">Let's Connect</h2>
+  <div class="card">
+    <p>GitHub:
+      <a href="https://github.com/sammedkhavate247-cloud" target="_blank">Visit My GitHub ↗</a>
+    </p>
+    <p>Email: Add your professional email here</p>
+  </div>
 </section>
 
 <footer>
-<p>© 2026 Sammed Khavate | DevOps Portfolio</p>
-<p>Built with HTML, Linux and GitHub Pages</p>
+  <p>© 2026 Sammed Khavate | DevOps Portfolio</p>
+  <p>Built with HTML, Linux and GitHub Pages</p>
 </footer>
 
 </body>
